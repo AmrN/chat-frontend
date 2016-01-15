@@ -1,0 +1,55 @@
+@import "settings";
+@import "normalize";
+@import "extends";
+@import "mixins";
+@import "vertical-rhythm";
+@import 'jeet/jeet';
+@import "mappy-breakpoints";
+
+@import "fontcustom";
+@import "styles/modules";
+@import "styles/forms";
+
+
+
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+*:active, *:focus {
+  outline: none;
+}
+
+a{
+  text-decoration: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+p {
+  @include bp(max-width small) {
+    @include fz(-1);
+  }
+}
+
+strong {
+  font-weight: bold;
+}
+
+html {
+  font-size: $base-font-size-px;
+  line-height: $base-line-height;
+}
+
+
+body {
+  min-height: 100%;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  font-family: $primary-font-family;
+  color: palette(neutral, -2);
+  overflow: hidden;
+}

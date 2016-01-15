@@ -1,0 +1,101 @@
+// converts px to rem ($size must use px unit)
+@function rem($size, $context: $base-font-size-px) {
+  $remSize: $size / $context;
+  @return #{$remSize}rem;
+}
+
+// handling color schemes
+@function palette-get($key: 'primary') {
+  @return map-get($colors-map, $key);
+}
+
+$color-interval: 10% !global;
+
+@function palette($color-name: 'primary', $level: 0) {
+  $color: palette-get($color-name);
+  $color-base: if($level < 0, black, white);
+
+  @return mix($color-base, $color, abs($level) * $color-interval);
+}
+
+
+@mixin abs-align($map) {
+  position: absolute;
+
+  $xtrans: 0;
+  $ytrans: 0;
+  $left: null;
+  $top: null;
+  $v-offset: 0;
+  $h-offset: 0;
+  $rotate: 0deg;
+  @if map-has-key($map, h-align) {
+    $h-align: map-get($map, h-align);
+    @if $h-align == left {
+      $left: 0;
+    }
+    @else if $h-align == left-out {
+      $left: 0;
+      $xtrans: -100%;
+    }
+    @else if $h-align == center {
+      $left: 50%;
+      $xtrans: -50%;
+    }
+    @else if $h-align == right {
+      $left: 100%;
+      $xtrans: -100%;
+    }
+    @else if $h-align == right-out {
+      $left: 100%;
+    }
+  }
+
+  @if map-has-key($map, v-align) {
+    $v-align: map-get($map, v-align);
+      @if $v-align == top {
+        $top: 0;
+      }
+      @else if $v-align == top-out {
+        $top: 0;
+        $ytrans: -100%;
+      }
+      @else if $v-align == center {
+        $top: 50%;
+        $ytrans: -50%;
+      }
+      @else if $v-align == bottom {
+        $top: 100%;
+        $ytrans: -100%;
+      }
+      @else if $v-align == bottom-out {
+        $top: 100%;
+      }
+  }
+
+
+  @if map-has-key($map, h-offset) {
+    $h-offset: map-get($map, h-offset);
+  }
+  @if map-has-key($map, v-offset) {
+    $v-offset: map-get($map, v-offset);
+  }
+
+  @if map-has-key($map, rotate) {
+    $rotate: map-get($map, rotate);
+  }
+
+  @if $left != null {
+    left: $left;
+    margin-left: $h-offset;
+  }
+
+  @if $top != null {
+    top: $top;
+    margin-top: $v-offset;
+  }
+
+  // transform: translateX($xtrans) translateY($ytrans) rotate($rotate);
+  // @include transform(translateX($xtrans) translateY($ytrans) rotate($rotate));
+  transform: translateX($xtrans) translateY($ytrans) rotate($rotate);
+}

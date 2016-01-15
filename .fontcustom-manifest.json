@@ -1,0 +1,82 @@
+{
+  "checksum": {
+    "previous": "ba0917ebc5c8584ca51672f23cd73fc807bf0bd8672a7761bf2d6c0084b57531",
+    "current": "ba0917ebc5c8584ca51672f23cd73fc807bf0bd8672a7761bf2d6c0084b57531"
+  },
+  "fonts": [
+    "app/assets/fonts/fontcustom_ba0917ebc5c8584ca51672f23cd73fc8.ttf",
+    "app/assets/fonts/fontcustom_ba0917ebc5c8584ca51672f23cd73fc8.svg",
+    "app/assets/fonts/fontcustom_ba0917ebc5c8584ca51672f23cd73fc8.woff",
+    "app/assets/fonts/fontcustom_ba0917ebc5c8584ca51672f23cd73fc8.eot"
+  ],
+  "glyphs": {
+    "arrow": {
+      "codepoint": 61696,
+      "source": "app/assets/icon-vectors/arrow.svg"
+    },
+    "bars": {
+      "codepoint": 61697,
+      "source": "app/assets/icon-vectors/bars.svg"
+    },
+    "board": {
+      "codepoint": 61698,
+      "source": "app/assets/icon-vectors/board.svg"
+    },
+    "chart": {
+      "codepoint": 61699,
+      "source": "app/assets/icon-vectors/chart.svg"
+    },
+    "checklist": {
+      "codepoint": 61700,
+      "source": "app/assets/icon-vectors/checklist.svg"
+    },
+    "email": {
+      "codepoint": 61708,
+      "source": "app/assets/icon-vectors/email.svg"
+    },
+    "facebook": {
+      "codepoint": 61706,
+      "source": "app/assets/icon-vectors/facebook.svg"
+    },
+    "linkedin": {
+      "codepoint": 61707,
+      "source": "app/assets/icon-vectors/linkedin.svg"
+    },
+    "note": {
+      "codepoint": 61704,
+      "source": "app/assets/icon-vectors/note.svg"
+    }
+  },
+  "options": {
+    "autowidth": false,
+    "config": "fontcustom.yml",
+    "css_selector": ".icon-{{glyph}}",
+    "debug": false,
+    "font_ascent": 448,
+    "font_descent": 64,
+    "font_design_size": 16,
+    "font_em": 512,
+    "font_name": "fontcustom",
+    "force": false,
+    "input": {
+      "templates": "app/assets/icon-vectors",
+      "vectors": "app/assets/icon-vectors"
+    },
+    "no_hash": false,
+    "output": {
+      "css": "app/assets/scss",
+      "fonts": "app/assets/fonts",
+      "preview": "docs"
+    },
+    "preprocessor_path": null,
+    "quiet": false,
+    "templates": [
+      "scss",
+      "preview"
+    ]
+  },
+  "templates": [
+    "app/assets/scss/_fontcustom.scss",
+    "docs/fontcustom-preview.html"
+  ]
+}

@@ -1,0 +1,101 @@
+$type-scale: (
+  -3: 0.422rem,
+  -2: 0.563rem,
+  -1: 0.75rem,   // small text
+   0: 1rem,      // body text
+   1: 1.333rem,  // large text
+   2: 1.777rem,   // main heading
+   3: 2.369rem,
+   4: 3.157rem
+);
+
+// $base-font-size: 1rem;
+// $base-line-height: $base-font-size * 1.25;
+
+// $line-heights: (
+//   -1: $base-line-height,
+//   0: $base-line-height,
+//   1: $base-line-height * 2,
+//   2: $base-line-height * 2
+// );
+@function type-scale($level) {
+  @return map-get($type-scale, $level);
+}
+
+@function line-height($level) {
+  // @return map-get($line-height, $level);
+  $type-scale: type-scale($level);
+  @return ceil($type-scale / $base-line-height)*$base-line-height;
+
+}
+
+@mixin fz($level: 0) {
+  font-size: type-scale($level);
+  line-height: line-height($level);
+}
+
+
+// white space variables to be used with trailer, leader and rhythm
+// $ws-3-sm  : 0.5;
+// $ws-2-sm  : 1;
+// $ws-1-sm  : 1.5;
+// $ws-md    : 2;
+// $ws-1-lg  : 3;
+// $ws-2-lg  : 4;
+// $ws-3-lg  : 5;
+// $ws-4-lg  : 6;
+
+
+// Perfect Fourth
+$fz-3-sm: -3;
+$fz-2-sm: -2;
+$fz-1-sm: -1;
+$fz-md  :  0;
+$fz-1-lg:  1;
+$fz-2-lg:  2;
+$fz-3-lg:  3;
+$fz-4-lg:  4;
+$fz-body: $fz-md;
+
+// adjust some font-sizes and line-heights
+$h1-font-size: $fz-3-lg;
+$h2-font-size: $fz-2-lg;
+$h3-font-size: $fz-1-lg;
+$h4-font-size: $fz-md;
+$h5-font-size: $fz-1-sm;
+$h6-font-size: $fz-2-sm;
+
+p {
+  @include fz($fz-body);
+  margin: 0;
+}
+
+h1 {
+  @include fz($h1-font-size);
+  margin: 0;
+}
+
+h2 {
+  @include fz($h2-font-size);
+  margin: 0;
+}
+
+h3 {
+  @include fz($h3-font-size);
+  margin: 0;
+}
+
+h4 {
+  @include fz($h4-font-size);
+  margin: 0;
+}
+
+h5 {
+  @include fz($h5-font-size);
+  margin: 0;
+}
+
+h6 {
+  @include fz($h6-font-size);
+  margin: 0;
+}

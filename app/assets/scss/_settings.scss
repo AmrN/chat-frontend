@@ -1,0 +1,61 @@
+// $small-bp : 480px;
+$small-bp : 530px;
+$med-bp   : 768px;
+$large-bp : 992px;
+$wide-bp  : 1200px;
+$mega-bp  : 1400px;
+
+$breakpoints: (
+        'small'     : $small-bp,
+        'med'       : $med-bp,
+        'large'     : $large-bp,
+        'wide'      : $wide-bp,
+        'mega'      : $mega-bp,
+);
+
+$colors-map: (
+        'primary'  : #755C6A,
+        'accent'   : #D2A48E,
+        'secondary': #55808E,
+
+        'neutral'  : #808080
+
+);
+
+//@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,800,600,700);
+// @import url(https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic);
+// @font-face{
+// 	font-family:"Optima";
+//   src:  url('stylesheets/fonts/unicode.optima-webfont.woff2') format('woff2'),
+//        url('stylesheets/fonts/unicode.optima-webfont.woff') format('woff');
+// }
+@font-face{
+	font-family:"bauhaus";
+    src:   url('/fonts/BAUHS93/BAUHS93.woff') format('woff');
+}
+//@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
+$fw-light     : 300;
+$fw-medium    : 400;
+$fw-bold      : 700;
+$fw-ultra-bold: 800;
+
+//$primary-font-family: 'Raleway', sans-serif;
+$secondary-font-family:  "bauhaus",Segoe,Segoe UI,Candara,Calibri,Arial,sans-serif;
+$primary-font-family: 'Trebuchet MS', Helvetica, sans-serif;
+
+// Vertical Rhythm Settings
+$base-font-size-px: 16px;
+$base-font-size: 1rem;
+$base-line-height: $base-font-size * 1.5;
+
+// $base-font-size       : 16px; // Sets the base font size
+// $base-font-size-med   : $base-font-size * 0.9;
+// $base-font-size-small : $base-font-size * 0.9;
+//
+// $line-height-multiplier : 1.5;
+// $base-line-height       : $base-font-size       * $line-height-multiplier; // Sets the base line height
+// $base-line-height-med   : $base-font-size-med   * $line-height-multiplier;
+// $base-line-height-small : $base-font-size-small * $line-height-multiplier;
+
+// $round-to-nearest-half-line: true; // Allows compass to round to  multiples of 0.5x line height
+// $rhythm-unit: "rem"; // Sets rhythm unit to rem.
