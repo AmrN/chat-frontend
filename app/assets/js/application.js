@@ -5,5 +5,5 @@ require('jquery');
 var app = angular.module('myApp', ['ngRoute','ngAnimate'])
 
 require("./components");
-
+require("./shared");
 require("./application.config");

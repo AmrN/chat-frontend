@@ -12,9 +12,15 @@ app.config(["$routeProvider", "$locationProvider",
   // $locationProvider.html5Mode(true);
 }]);
 
-app.run(["$rootScope", function($rootScope) {
+app.run(["$rootScope", "$timeout", function($rootScope, $timeout) {
   $rootScope.pageLoaded = false;
+  $rootScope.loadTimeoutReached = false;
+
   $rootScope.setPageLoaded = function(bool) {
     $rootScope.pageLoaded = bool;
   }
+
+  $timeout(function() {
+    $rootScope.loadTimeoutReached = true;
+  }, 2000);
 }]);

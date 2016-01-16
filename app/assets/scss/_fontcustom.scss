@@ -4,11 +4,11 @@
 
 @font-face {
   font-family: "fontcustom";
-  src: url("../fonts/fontcustom_ba0917ebc5c8584ca51672f23cd73fc8.eot");
-  src: url("../fonts/fontcustom_ba0917ebc5c8584ca51672f23cd73fc8.eot?#iefix") format("embedded-opentype"),
-       url("../fonts/fontcustom_ba0917ebc5c8584ca51672f23cd73fc8.woff") format("woff"),
-       url("../fonts/fontcustom_ba0917ebc5c8584ca51672f23cd73fc8.ttf") format("truetype"),
-       url("../fonts/fontcustom_ba0917ebc5c8584ca51672f23cd73fc8.svg#fontcustom") format("svg");
+  src: url("../fonts/fontcustom_6a80eb4874d31717cc54e14c28b00567.eot");
+  src: url("../fonts/fontcustom_6a80eb4874d31717cc54e14c28b00567.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/fontcustom_6a80eb4874d31717cc54e14c28b00567.woff") format("woff"),
+       url("../fonts/fontcustom_6a80eb4874d31717cc54e14c28b00567.ttf") format("truetype"),
+       url("../fonts/fontcustom_6a80eb4874d31717cc54e14c28b00567.svg#fontcustom") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -16,7 +16,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "fontcustom";
-    src: url("../fonts/fontcustom_ba0917ebc5c8584ca51672f23cd73fc8.svg#fontcustom") format("svg");
+    src: url("../fonts/fontcustom_6a80eb4874d31717cc54e14c28b00567.svg#fontcustom") format("svg");
   }
 }
 
@@ -51,9 +51,9 @@
 .icon-board:before { content: "\f102"; }
 .icon-chart:before { content: "\f103"; }
 .icon-checklist:before { content: "\f104"; }
-.icon-email:before { content: "\f10c"; }
-.icon-facebook:before { content: "\f10a"; }
-.icon-linkedin:before { content: "\f10b"; }
+.icon-email:before { content: "\f105"; }
+.icon-facebook:before { content: "\f106"; }
+.icon-linkedin:before { content: "\f107"; }
 .icon-note:before { content: "\f108"; }
 
 $font-fontcustom-arrow: "\f100";
@@ -61,7 +61,7 @@ $font-fontcustom-bars: "\f101";
 $font-fontcustom-board: "\f102";
 $font-fontcustom-chart: "\f103";
 $font-fontcustom-checklist: "\f104";
-$font-fontcustom-email: "\f10c";
-$font-fontcustom-facebook: "\f10a";
-$font-fontcustom-linkedin: "\f10b";
+$font-fontcustom-email: "\f105";
+$font-fontcustom-facebook: "\f106";
+$font-fontcustom-linkedin: "\f107";
 $font-fontcustom-note: "\f108";

@@ -1,13 +1,13 @@
 {
   "checksum": {
-    "previous": "ba0917ebc5c8584ca51672f23cd73fc807bf0bd8672a7761bf2d6c0084b57531",
-    "current": "ba0917ebc5c8584ca51672f23cd73fc807bf0bd8672a7761bf2d6c0084b57531"
+    "previous": "6a80eb4874d31717cc54e14c28b00567aa49397b41905598ca3df3e15e1891aa",
+    "current": "6a80eb4874d31717cc54e14c28b00567aa49397b41905598ca3df3e15e1891aa"
   },
   "fonts": [
-    "app/assets/fonts/fontcustom_ba0917ebc5c8584ca51672f23cd73fc8.ttf",
-    "app/assets/fonts/fontcustom_ba0917ebc5c8584ca51672f23cd73fc8.svg",
-    "app/assets/fonts/fontcustom_ba0917ebc5c8584ca51672f23cd73fc8.woff",
-    "app/assets/fonts/fontcustom_ba0917ebc5c8584ca51672f23cd73fc8.eot"
+    "app/assets/fonts/fontcustom_6a80eb4874d31717cc54e14c28b00567.ttf",
+    "app/assets/fonts/fontcustom_6a80eb4874d31717cc54e14c28b00567.svg",
+    "app/assets/fonts/fontcustom_6a80eb4874d31717cc54e14c28b00567.woff",
+    "app/assets/fonts/fontcustom_6a80eb4874d31717cc54e14c28b00567.eot"
   ],
   "glyphs": {
     "arrow": {
@@ -31,15 +31,15 @@
       "source": "app/assets/icon-vectors/checklist.svg"
     },
     "email": {
-      "codepoint": 61708,
+      "codepoint": 61701,
       "source": "app/assets/icon-vectors/email.svg"
     },
     "facebook": {
-      "codepoint": 61706,
+      "codepoint": 61702,
       "source": "app/assets/icon-vectors/facebook.svg"
     },
     "linkedin": {
-      "codepoint": 61707,
+      "codepoint": 61703,
       "source": "app/assets/icon-vectors/linkedin.svg"
     },
     "note": {

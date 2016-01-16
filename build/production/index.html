@@ -5,14 +5,14 @@
     <title>dauntless</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="assets/css/main-b2c2be4106.css">
+    <link rel="stylesheet" href="assets/css/main-11835f8ce5.css">
   </head>
-  <body ng-class="{'scroll': pageLoaded}">
+  <body ng-class="{'scroll': pageLoaded && loadTimeoutReached}">
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="window-overlay" ng-if="!pageLoaded">
+    <div class="window-overlay" ng-if="!(pageLoaded && loadTimeoutReached)">
       <div class="page-loading">
         <p class="loading-text">
           Please Wait
@@ -29,6 +29,6 @@
 
     <div ng-view onload="setPageLoaded(true)"></div>
 
-    <script type="text/javascript" src="assets/js/application-b893ecec34.js"></script>
+    <script type="text/javascript" src="assets/js/application-1c206b59c5.js"></script>
   </body>
 </html>
