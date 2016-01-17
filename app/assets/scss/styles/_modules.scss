@@ -15,7 +15,7 @@
   top: 0;
   right: 0;
   bottom: 0;
-  background-color: fade-out(palette(primary), 0.1);
+  background-color: palette(primary);
   z-index: 9999;
   .page-loading {
     @include abs-align((h-align: center, v-align: center));
@@ -24,6 +24,10 @@
       @include fz(2);
     }
   }
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .scroll {

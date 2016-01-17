@@ -12,17 +12,44 @@ module.exports = ["$window", "onScrollClassConfig", function ($window, onScrollC
               // console.log(config);
               var reverse = config.reverse;
               var offset = config.offset;
-              var classToAdd = config.add;
-              var classToRemove = config.remove;
+              var classToAddObj = config.add;
+              var classToRemoveObj = config.remove;
               var $element = $(element);
 
               $($window).on("scroll", function() {
                   if (this.pageYOffset >= $element.offset().top - offset) {
-                      $element.addClass(classToAdd);
-                      $element.removeClass(classToRemove);
+                      if (angular.isObject(classToAddObj)) {
+                        angular.forEach(classToAddObj, function(classToAdd, target) {
+                          console.log("target: " + target + " ,classToAdd: " + classToAdd);
+                          $(target).addClass(classToAdd);
+                        });
+                      } else {
+                        $element.addClass(classToAddObj);
+                      }
+
+                      if (angular.isObject(classToRemoveObj)) {
+                        angular.forEach(classToRemoveObj, function(classToRemove, target) {
+                          $(target).removeClass(classToRemove);
+                        });
+                      } else {
+                        $element.removeClass(classToRemoveObj);
+                      }
                   } else if (reverse) {
-                      $element.addClass(classToRemove);
-                      $element.removeClass(classToAdd);
+                      if (angular.isObject(classToAddObj)) {
+                        angular.forEach(classToAddObj, function(classToAdd, target) {
+                          $(target).removeClass(classToAdd);
+                        });
+                      } else {
+                        $element.removeClass(classToAddObj);
+                      }
+
+                      if (angular.isObject(classToRemoveObj)) {
+                        angular.forEach(classToRemoveObj, function(classToRemove, target) {
+                          $(target).addClass(classToRemove);
+                        });
+                      } else {
+                        $element.addClass(classToRemoveObj);
+                      }
                   }
                 //  scope.$apply();
                 });

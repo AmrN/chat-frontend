@@ -15,7 +15,7 @@ app.config(["$routeProvider", "$locationProvider",
 app.config(["onScrollClassConfigProvider",
  function(onScrollClassConfigProvider) {
    onScrollClassConfigProvider.config = {
-     offset: 350
+     offset: 420
    }
 }]);
 
