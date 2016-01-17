@@ -12,6 +12,13 @@ app.config(["$routeProvider", "$locationProvider",
   // $locationProvider.html5Mode(true);
 }]);
 
+app.config(["onScrollClassConfigProvider",
+ function(onScrollClassConfigProvider) {
+   onScrollClassConfigProvider.config = {
+     offset: 350
+   }
+}]);
+
 app.run(["$rootScope", "$timeout", function($rootScope, $timeout) {
   $rootScope.pageLoaded = false;
   $rootScope.loadTimeoutReached = false;

@@ -30,6 +30,10 @@
   overflow: auto;
 }
 
+.hidden {
+  opacity: 0;
+}
+
 // responsive img
 img.responsive {
   max-width: 100%;

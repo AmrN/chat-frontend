@@ -10,7 +10,7 @@ module.exports = ["$window", function ($window) {
       link: function(scope, element, attrs) {
               var elemsToFix = $(scope.toFix);
               $element = $(element);
-              angular.element($window).bind("scroll", function() {
+              $($window).on("scroll", function() {
                 angular.forEach(elemsToFix, function(elem) {
                   $elem = $(elem);
                   if (this.pageYOffset >= $element.offset().top + $element.height()) {
