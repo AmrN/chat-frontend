@@ -16,7 +16,16 @@ module.exports = ["$window", "onScrollClassConfig", function ($window, onScrollC
               var classToRemoveObj = config.remove;
               var $element = $(element);
 
+
+              var didScroll = false;
               $($window).on("scroll", function() {
+                  didScroll = true;
+                //  scope.$apply();
+              });
+
+              setInterval(function() {
+                if (didScroll) {
+                  didScroll = false;
                   if (this.pageYOffset >= $element.offset().top - offset) {
                       if (angular.isObject(classToAddObj)) {
                         angular.forEach(classToAddObj, function(classToAdd, target) {
@@ -51,8 +60,8 @@ module.exports = ["$window", "onScrollClassConfig", function ($window, onScrollC
                         $element.addClass(classToRemoveObj);
                       }
                   }
-                //  scope.$apply();
-                });
+                }
+              }, 250);
 
           }
       }

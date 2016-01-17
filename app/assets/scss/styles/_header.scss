@@ -150,6 +150,9 @@
       width: 26%;
       margin-left: 7%;
       margin-right: 0;
+      a {
+        display: inline-block;
+      }
       @include bp(small) {
         a {
           opacity: 0.4;

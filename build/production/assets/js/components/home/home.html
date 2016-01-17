@@ -19,19 +19,19 @@
       <nav class="sections-nav" ng-class="{'toggled-on': navbarToggled}">
         <ul class="sections-nav__list">
           <li class="sections-nav__list__item">
-            <a href="#" scroll-on-click scroll-to="#who-we-are" scroll-to-cb="setNavbarToggled(false)">
+            <a href="#" id="who-we-are-nav" scroll-on-click scroll-to="#who-we-are" scroll-to-cb="setNavbarToggled(false)">
               <img src="assets/images/who-we-are-nav-810f83727a.svg" alt="who we are nav">
               <p class="sections-nav__list__item__text -prim-fg">who we are</p>
             </a>
           </li>
           <li class="sections-nav__list__item">
-            <a href="#" scroll-on-click scroll-to="#what-we-do" scroll-to-cb="setNavbarToggled(false)">
+            <a href="#" id="what-we-do-nav" scroll-on-click scroll-to="#what-we-do" scroll-to-cb="setNavbarToggled(false)">
               <img src="assets/images/what-we-do-nav-f1e0b5df48.svg" alt="who we are nav">
               <p class="sections-nav__list__item__text -sec-fg">what we do</p>
             </a>
           </li>
           <li class="sections-nav__list__item">
-            <a href="#" scroll-on-click scroll-to="#contact-us" scroll-to-cb="setNavbarToggled(false)">
+            <a href="#" id="contact-us-nav" scroll-on-click scroll-to="#contact-us" scroll-to-cb="setNavbarToggled(false)">
               <img src="assets/images/contact-us-nav-403d19eaeb.svg" alt="who we are nav">
               <p class="sections-nav__list__item__text -acc-fg">contact us</p>
             </a>
@@ -67,7 +67,7 @@
     </ul>
   </nav>
 
-  <section class="main-section -first -prim-bg -circles-right container has-content main-padding-h main-padding-v" id="who-we-are">
+  <section class="main-section -first -prim-bg -circles-right container has-content main-padding-h main-padding-v" id="who-we-are" on-scroll-class="{add: {'#who-we-are-nav': '-active'}, remove: {'#what-we-do-nav': '-active', '#contact-us-nav': '-active'}}">
     <div class="main-section__lead">
       <h2 class="main-section__lead__header">
         Who we are
@@ -82,8 +82,8 @@
     <header class="section-header main-padding">
       our core values
     </header>
-    <div class="div sub-section__content main-padding-h main-padding-v-sm">
-      <div class="section-column">
+    <div class="div sub-section__content main-padding-h main-padding-v-sm overflow-hidden">
+      <div class="section-column hidden" on-scroll-class="{add: 'animated fadeIn', remove: 'hidden', offset: 440}">
         <p>
           <strong>INTEGRITY:</strong> Strive for the conducting ourselves with the hightest leve of personal and professional integrity.
         </p>
@@ -94,7 +94,7 @@
           <strong>IT'S ABOUT BUSINESS:</strong> Technology is a tool whihc serves the needs of business. It is not a concern of itself or viable as a separate entity.
         </p>
       </div>
-      <div class="section-column">
+      <div class="section-column hidden" on-scroll-class="{add: 'animated fadeIn', remove: 'hidden', offset: 440}">
         <p>
           <strong>EXCEED CLIENT EXPECTATIONS:</strong> Success is measured by the client; strive to continually exceed client expectations.
         </p>
@@ -123,7 +123,7 @@
     </p>
   </section>
 
-  <section class="main-section -sec-bg -circles-left container has-content  main-padding-v-sm" id="what-we-do">
+  <section class="main-section -sec-bg -circles-left container has-content  main-padding-v-sm" id="what-we-do" on-scroll-class="{add: {'#what-we-do-nav': '-active'}, remove: {'#who-we-are-nav': '-active', '#contact-us-nav': '-active'}}">
     <div class="main-section__lead main-padding-h">
       <h2 class="main-section__lead__header">
         What we do
@@ -280,7 +280,7 @@
   </div>
 
 
-  <section class="main-section -acc-bg -circles-right container main-padding-v" id="contact-us">
+  <section class="main-section -acc-bg -circles-right container main-padding-v" id="contact-us" on-scroll-class="{add: {'#contact-us-nav': '-active'}, remove: {'#what-we-do-nav': '-active', '#who-we-are-nav': '-active'}}">
     <div class="main-section__lead main-padding-h has-content">
       <h2 class="main-section__lead__header">
         Contact us
