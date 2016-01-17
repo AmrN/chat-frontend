@@ -150,12 +150,16 @@
       width: 26%;
       margin-left: 7%;
       margin-right: 0;
-      @include bp(med) {
+      @include bp(small) {
         a {
-          opacity: 0.5;
+          opacity: 0.4;
           transition: opacity .5s ease;
 
           &.-active {
+            opacity: 1;
+          }
+
+          &:hover {
             opacity: 1;
           }
         }
