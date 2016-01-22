@@ -1,7 +1,10 @@
 var $ = require("jquery");
+var getScrollTop = require('./getScrollTop');
+var raf = require('raf');
 
 
-module.exports = ["$window", function ($window) {
+
+module.exports = [function () {
     return {
       restrict: "A",
       scope: {
@@ -18,18 +21,38 @@ module.exports = ["$window", function ($window) {
               var offset = angular.isDefined(scope.scrollFollowOffset) ?
                 scope.scrollFollowOffset : 0;
 
-              var didScroll = false;
-              $($window).on("scroll", function() {
-                didScroll = true;
-              });
+              // var didScroll = false;
+              // $($window).on("scroll", function() {
+              //   didScroll = true;
+              // });
+              //
+              // setInterval(function() {
+              //   if (didScroll) {
+              //     didScroll = false;
+              //     var current = -1;
+              //     angular.forEach($target, function(elem) {
+              //       var $elem = $(elem);
+              //       if (this.pageYOffset >= $elem.offset().top - offset) {
+              //           current++;
+              //       }
+              //     });
+              //     if (current >= 0 && current != currentChosen) {
+              //       $inner.removeClass(activeClass);
+              //       $inner.eq(current).addClass(activeClass);
+              //       currentChosen = current;
+              //     }
+              //   }
+              // }, 250);
 
-              setInterval(function() {
-                if (didScroll) {
-                  didScroll = false;
+              var lastPageYOffset = 0;
+
+              function render() {
+                if (getScrollTop() != lastPageYOffset) {
                   var current = -1;
                   angular.forEach($target, function(elem) {
                     var $elem = $(elem);
-                    if (this.pageYOffset >= $elem.offset().top - offset) {
+                    console.log(this);
+                    if (pageYOffset >= $elem.offset().top - offset) {
                         current++;
                     }
                   });
@@ -38,8 +61,13 @@ module.exports = ["$window", function ($window) {
                     $inner.eq(current).addClass(activeClass);
                     currentChosen = current;
                   }
+
+                  lastPageYOffset = getScrollTop();
                 }
-              }, 250);
+                raf(render);
+              }
+
+              raf(render);
           }
       }
 }];

@@ -37,16 +37,19 @@
     "jshint": "^2.8.0",
     "jshint-stylish": "^2.1.0",
     "pretty-hrtime": "^1.0.1",
+    "raf": "^3.1.0",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.5",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
   },
   "browser": {
-    "jquery": "./bower_components/jquery/dist/jquery.min.js"
+    "jquery": "./bower_components/jquery/dist/jquery.min.js",
+    "skrollr": "./bower_components/skrollr/src/skrollr.js"
   },
   "browserify-shim": {
-    "jquery": "$"
+    "jquery": "$",
+    "skrollr": "skrollr"
   },
   "browserify": {
     "transform": [

@@ -454,7 +454,16 @@ img.responsive {
   margin-bottom: ($base-line-height * 1);
   img {
     display: inline-block;
+
+    // for parallax
+    max-width: 100%;
   }
+
+  // for parallax
+  overflow: hidden;
+  position: relative;
+
+
 }
 
 

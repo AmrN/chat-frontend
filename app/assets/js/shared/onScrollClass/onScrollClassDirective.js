@@ -1,4 +1,7 @@
 var $ = require("jquery");
+var getScrollTop = require('../getScrollTop');
+var raf = require('raf');
+
 
 module.exports = ["$window", "onScrollClassConfig", function ($window, onScrollClassConfig) {
     return {
@@ -16,16 +19,10 @@ module.exports = ["$window", "onScrollClassConfig", function ($window, onScrollC
               var classToRemoveObj = config.remove;
               var $element = $(element);
 
+              var lastPageYOffset = 0;
 
-              var didScroll = false;
-              $($window).on("scroll", function() {
-                  didScroll = true;
-                //  scope.$apply();
-              });
-
-              setInterval(function() {
-                if (didScroll) {
-                  didScroll = false;
+              function render() {
+                if (getScrollTop() != lastPageYOffset) {
                   if (this.pageYOffset >= $element.offset().top - offset) {
                       if (angular.isObject(classToAddObj)) {
                         angular.forEach(classToAddObj, function(classToAdd, target) {
@@ -60,8 +57,13 @@ module.exports = ["$window", "onScrollClassConfig", function ($window, onScrollC
                         $element.addClass(classToRemoveObj);
                       }
                   }
+                  lastPageYOffset = getScrollTop();
                 }
-              }, 250);
+
+                raf(render);
+              }
+
+              raf(render);
 
           }
       }

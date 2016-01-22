@@ -1,4 +1,6 @@
 var $ = require("jquery");
+var animateScrollTop = require('./animateScrollTop');
+
 module.exports = ["$parse", function($parse) {
     return {
         restrict: 'A',
@@ -16,7 +18,7 @@ module.exports = ["$parse", function($parse) {
                   $parse(scope.scrollToCb)(scope.$parent);
                 });
 
-                $('html, body').stop().animate({scrollTop: Math.round($(scope.scrollTo).offset().top - 120)}, 'slow');
+                animateScrollTop(Math.round($(scope.scrollTo).offset().top - 120));
             });
         }
       }

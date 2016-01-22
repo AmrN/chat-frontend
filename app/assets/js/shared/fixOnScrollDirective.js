@@ -1,6 +1,8 @@
 var $ = require("jquery");
+var getScrollTop = require('./getScrollTop');
+var raf = require('raf');
 
-module.exports = ["$window", function ($window) {
+module.exports = [function () {
     return {
       restrict: "A",
       scope: {
@@ -11,17 +13,14 @@ module.exports = ["$window", function ($window) {
               var elemsToFix = $(scope.toFix);
               var $element = $(element);
 
-              var didScroll = false;
-              $($window).on("scroll", function() {
-                didScroll = true;
-              });
 
-              setInterval(function() {
-                if (didScroll) {
-                  didScroll = false;
+              var lastPageYOffset = 0;
+
+              function render() {
+                if (getScrollTop() != lastPageYOffset) {
                   angular.forEach(elemsToFix, function(elem) {
                     var $elem = $(elem);
-                    if (this.pageYOffset >= $element.offset().top + $element.height()) {
+                    if (getScrollTop() >= $element.offset().top + $element.height()) {
                         $elem.addClass(scope.fixClass);
 
                     } else {
@@ -29,8 +28,14 @@ module.exports = ["$window", function ($window) {
                     }
                   //  scope.$apply();
                   });
+
+                  lastPageYOffset = getScrollTop();
                 }
-              }, 250);
+                raf(render);
+              }
+
+              raf(render);
+
           }
       }
 }];
