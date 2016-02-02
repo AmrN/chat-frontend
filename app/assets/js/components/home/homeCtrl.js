@@ -1,4 +1,4 @@
-module.exports = ["$scope", '$state', "actionCableSvc", "$interval", "authSvc", "userRes", "constants", function($scope, $state, actionCableSvc, $interval, authSvc, userRes, constants) {
+module.exports = ["$scope", '$state', "actionCableSvc", "$interval", "authSvc", "userRes", "constants", "notifSvc", function($scope, $state, actionCableSvc, $interval, authSvc, userRes, constants, notifSvc) {
 
   $scope.guest = {};
   $scope.user = {};
@@ -15,25 +15,6 @@ module.exports = ["$scope", '$state', "actionCableSvc", "$interval", "authSvc", 
   }
 
   $scope.loginGuest = function() {
-    // actionCableSvc.createConsumer('http://localhost:3000/cable',
-    //   {username: $scope.user.username});
-
-    // actionCableSvc.createConsumer(constants.cableBaseUrl,
-    //   {username: $scope.guest.username});
-
-    // handle = $interval(function() {
-    //   // console.log('in handler');
-    //   if (actionCableSvc.connected()) {
-    //     $state.go('chatroom');
-    //   }
-    //   console.log('actioncable.connected?: ' + actionCableSvc.connected());
-    //
-    // }, 100);
-    //
-    // $scope.$on('$destroy', function() {
-    //   $interval.cancel(handle);
-    //   // console.log('here');
-    // });
     authSvc.loginGuest($scope.guest.username);
   }
 
@@ -53,6 +34,15 @@ module.exports = ["$scope", '$state', "actionCableSvc", "$interval", "authSvc", 
     actionCableSvc.createConsumer(constants.cableBaseUrl,
       {auth_token: authSvc.getToken()});
 
+    notifSvc.add('global', {message: 'logged in successfully :)', class: 'success'}, 6000);
     // $state.go('chatroom');
   });
+
+  $scope.$on('auth.login.error', function() {
+    notifSvc.add('global', {message: "login failed :(", class: 'error'}, 6000);
+  })
+
+  $scope.$on('auth.logout.success', function() {
+    notifSvc.add('global', {message: "Bye Bye :'(", class: 'success'}, 6000);
+  })
 }];

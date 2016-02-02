@@ -80,7 +80,7 @@ app.config(["onScrollClassConfigProvider",
    }
 }]);
 
-app.run(["$rootScope", "$timeout", function($rootScope, $timeout) {
+app.run(["$rootScope", "$timeout", "notifSvc", function($rootScope, $timeout, notifSvc) {
   $rootScope.pageLoaded = false;
   $rootScope.loadTimeoutReached = false;
 
@@ -91,4 +91,5 @@ app.run(["$rootScope", "$timeout", function($rootScope, $timeout) {
   $timeout(function() {
     $rootScope.loadTimeoutReached = true;
   }, 2000);
+  $rootScope.notifications = notifSvc.get('global');
 }]);

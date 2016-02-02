@@ -1,4 +1,29 @@
+<style>
+  .success {
+    color: green;
+  }
+  .error {
+    color: red;
+  }
+  .remove {
+    color: orange;
+    cursor: pointer;
+  }
+</style>
+
 <a href="#" ng-click="logout()">Logout</a>
+
+<ul class="notifications" ng-if="notifications.length > 0">
+  <li ng-repeat="notif in notifications" ng-class="notif.class">{{notif.message}} <span class="remove" ng-click="notifications.splice($index, 1)">&cross;</span></li>
+</ul>
+<div class="no-notifications" ng-if="notifications.length == 0">
+  No notifications :(
+</div>
+
+<pre>
+  {{notifications | json}}
+</pre>
+
 <div class="page-content-wrapper container">
   <form name="loginGuestForm" ng-submit="loginGuest()" novalidate>
     <input type="text" ng-model="guest.username" placeholder="guest name">

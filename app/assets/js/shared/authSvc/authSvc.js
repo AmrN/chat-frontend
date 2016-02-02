@@ -41,8 +41,10 @@ module.exports = function() {
 
     Auth.prototype.logout = function() {
       // localStorage.removeItem('auth_token');
-      authStorageSvc.clearAuthStorage();
-      $rootScope.$broadcast('auth.logout.success');
+      if (this.loggedIn()) {
+        authStorageSvc.clearAuthStorage();
+        $rootScope.$broadcast('auth.logout.success');
+      }
     };
 
     Auth.prototype.loggedIn = function() {

@@ -7,3 +7,4 @@ app.directive("skrollr", require("./skrollrDirective"));
 
 require("./onScrollClass");
 require("./authSvc");
+require("./notifSvc");
