@@ -2,7 +2,7 @@
 <html ng-app="myApp">
   <head>
     <meta charset="utf-8">
-    <title>dauntless</title>
+    <title>Chat App</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="assets/css/main.css">
@@ -27,7 +27,16 @@
       </div>
     </div>
 
-    <div ng-view onload="setPageLoaded(true)"></div>
+    <header>
+      <nav>
+        <ul>
+          <li><a ui-sref="home">Home</a></li>
+          <li><a ui-sref="about">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div ui-view onload="setPageLoaded(true)"></div>
 
     <script type="text/javascript" src="assets/js/application.js"></script>
   </body>

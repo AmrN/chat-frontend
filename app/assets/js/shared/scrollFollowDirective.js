@@ -59,6 +59,7 @@ module.exports = [function () {
                   if (current >= 0 && current != currentChosen) {
                     $inner.removeClass(activeClass);
                     $inner.eq(current).addClass(activeClass);
+                    alert("chosen: " + current);
                     currentChosen = current;
                   }
 

@@ -37,6 +37,7 @@ gulp.task('scripts', function(callback) {
         .bundle()
         // Report compile errors
         .on('error', handleErrors)
+
         // Use vinyl-source-stream to make the
         // stream gulp compatible. Specifiy the
         // desired output filename here.

@@ -12,9 +12,11 @@
     "angular": "^1.4.8",
     "angular-animate": "^1.4.8",
     "angular-route": "^1.4.8",
+    "angular-ui-router": "^0.2.16",
     "browser-sync": "^2.11.0",
     "browserify": "^13.0.0",
     "browserify-shim": "^3.8.12",
+    "connect-history-api-fallback": "^1.1.0",
     "del": "^2.2.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
@@ -34,22 +36,28 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.1",
     "gulp-util": "^3.0.7",
+    "http-proxy-middleware": "^0.9.1",
+    "humps": "^1.0.0",
     "jshint": "^2.8.0",
     "jshint-stylish": "^2.1.0",
+    "lodash": "^4.0.1",
     "pretty-hrtime": "^1.0.1",
     "raf": "^3.1.0",
     "require-dir": "^0.3.0",
+    "restangular": "^1.5.1",
     "run-sequence": "^1.1.5",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
   },
   "browser": {
     "jquery": "./bower_components/jquery/dist/jquery.min.js",
-    "skrollr": "./bower_components/skrollr/src/skrollr.js"
+    "skrollr": "./bower_components/skrollr/src/skrollr.js",
+    "angular-rails-resource": "./bower_components/angularjs-rails-resource/angularjs-rails-resource.js"
   },
   "browserify-shim": {
     "jquery": "$",
-    "skrollr": "skrollr"
+    "skrollr": "skrollr",
+    "angular-rails-resource": "angularRailsResource"
   },
   "browserify": {
     "transform": [

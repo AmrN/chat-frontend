@@ -2,10 +2,10 @@
 <html ng-app="myApp">
   <head>
     <meta charset="utf-8">
-    <title>dauntless</title>
+    <title>Chat App</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="assets/css/main-53a9f44452.css">
+    <link rel="stylesheet" href="assets/css/main-a2dfaf29a0.css">
   </head>
   <body ng-class="{'scroll': pageLoaded && loadTimeoutReached}">
     <!--[if lt IE 10]>
@@ -27,8 +27,17 @@
       </div>
     </div>
 
-    <div ng-view onload="setPageLoaded(true)"></div>
+    <header>
+      <nav>
+        <ul>
+          <li><a ui-sref="home">Home</a></li>
+          <li><a ui-sref="about">About</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <script type="text/javascript" src="assets/js/application-1f3057a57d.js"></script>
+    <div ui-view onload="setPageLoaded(true)"></div>
+
+    <script type="text/javascript" src="assets/js/application-8bb852b754.js"></script>
   </body>
 </html>
