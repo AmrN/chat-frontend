@@ -7,6 +7,7 @@ module.exports = ['authStorageSvc', function(authStorageSvc) {
       if (authToken) {
         config.headers['Authorization'] = 'Bearer ' + authToken;
       }
+      // console.log("in interceptor, config.data = " + JSON.stringify(config.data));
       return config;
     }
   }

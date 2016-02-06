@@ -12,8 +12,8 @@ module.exports = function() {
     Auth.prototype.login = function(username, password, rememberMe) {
       var authObj = {auth: {username: username, password: password}}
       var authTokenUrl = config.authTokenUrl;
-      authStorageSvc.clearAuthStorage();
-
+      // authStorageSvc.clearAuthStorage();
+      this.logout();
       $http.post(authTokenUrl, authObj).then(
         function(successResponse) {
           var authToken = successResponse.data['jwt'];
@@ -28,6 +28,7 @@ module.exports = function() {
     };
 
     Auth.prototype.loginGuest = function(guestName) {
+      this.logout();
       // we log guests in by creating a new user
       userRes.create({user: {username: guestName}}).then(
         function(userResponse) {
