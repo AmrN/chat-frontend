@@ -6,11 +6,14 @@ module.exports = ["$scope", '$state', "actionCableSvc", "$interval", "authSvc", 
 
   $scope.users = [];
   $scope.getUsers = function() {
-    $scope.users = userRes.index().$object;
+    $scope.users = userRes.query();
   }
 
   $scope.register = function() {
-    userRes.create({user: $scope.registerUser});
+    var user = new userRes($scope.registerUser);
+    user.$save();
+
+    // userRes.create({user: $scope.registerUser});
     $scope.registerUser = {};
   }
 

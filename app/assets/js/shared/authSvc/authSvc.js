@@ -30,14 +30,21 @@ module.exports = function() {
     Auth.prototype.loginGuest = function(guestName) {
       this.logout();
       // we log guests in by creating a new user
-      userRes.create({user: {username: guestName}}).then(
-        function(userResponse) {
-          // when the server creates a guest, it returns a jwt token with it
-          var authToken = userResponse['jwt'];
-          authStorageSvc.setToken(authToken);
-          $rootScope.$broadcast('auth.login.success')
-        }
-      );
+      var user = new userRes({username: guestName});
+      user.$save(function() {
+        var authToken = user['jwt'];
+        authStorageSvc.setToken(authToken);
+        $rootScope.$broadcast('auth.login.success');
+      });
+
+      // userRes.create({user: {username: guestName}}).then(
+      //   function(userResponse) {
+      //     // when the server creates a guest, it returns a jwt token with it
+      //     var authToken = userResponse['jwt'];
+      //     authStorageSvc.setToken(authToken);
+      //     $rootScope.$broadcast('auth.login.success')
+      //   }
+      // );
     };
 
     Auth.prototype.logout = function() {
@@ -66,15 +73,20 @@ module.exports = function() {
       if (!user) {
         var token = authStorageSvc.getToken();
         if (token) {
-          userPromise = userRes.currentUser();
-          userPromise.then(
-            function(userResponse) {
-              authStorageSvc.setUser(userResponse);
-              console.log(userPromise)
-              return userPromise;
-            }
-          );
-          user = userPromise.$object;
+
+          user = userRes.current(function() {
+            authStorageSvc.setUser(user);
+          });
+
+          // userPromise = userRes.currentUser();
+          // userPromise.then(
+          //   function(userResponse) {
+          //     authStorageSvc.setUser(userResponse);
+          //     console.log(userPromise)
+          //     return userPromise;
+          //   }
+          // );
+          // user = userPromise.$object;
         }
       }
 

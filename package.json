@@ -51,13 +51,11 @@
   },
   "browser": {
     "jquery": "./bower_components/jquery/dist/jquery.min.js",
-    "skrollr": "./bower_components/skrollr/src/skrollr.js",
-    "angular-rails-resource": "./bower_components/angularjs-rails-resource/angularjs-rails-resource.js"
+    "skrollr": "./bower_components/skrollr/src/skrollr.js"
   },
   "browserify-shim": {
     "jquery": "$",
-    "skrollr": "skrollr",
-    "angular-rails-resource": "angularRailsResource"
+    "skrollr": "skrollr"
   },
   "browserify": {
     "transform": [
