@@ -9,7 +9,7 @@ require('jquery');
 // restangular needs this alias
 // _.contains = _.includes;
 
-var app = angular.module('myApp', ['ui.router','ngAnimate', 'ngResource', 'restangular']);
+var app = angular.module('myApp', ['ui.router','ngAnimate', 'ngResource']);
 
 require('./application.constants');
 require("./components");
