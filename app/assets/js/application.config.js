@@ -52,26 +52,6 @@ app.config(['$httpProvider', function($httpProvider) {
   $httpProvider.interceptors.push('camelHttpInterceptor');
 }]);
 
-// configuring restangular
-app.config(['RestangularProvider', 'constants', function(RestangularProvider, constants) {
-  var rp = RestangularProvider;
-  // var humps = require('humps');
-
-  rp.setBaseUrl(constants.apiBaseUrl);
-
-  // // camelize server response
-  // rp.addResponseInterceptor(function (data, operation, what, url, response, deferred) {
-  //   return humps.camelizeKeys(data);
-  // });
-  //
-  // // decamilize data sent to server
-  // rp.addRequestInterceptor(function (data, operation, what, url, response, deferred) {
-  //   // console.log("in interceptor:\n" + "data: " + data + "\noperation: " + operation + "\nwhat: " + what + "\nurl: " + url + "\nresponse: " + response + "\ndeferred: " + deferred);
-  //   return humps.decamelizeKeys(data);
-  // });
-
-}]);
-
 
 // configuring onScrollClass
 app.config(["onScrollClassConfigProvider",
