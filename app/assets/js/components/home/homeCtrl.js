@@ -11,7 +11,7 @@ module.exports = ["$scope", '$state', "actionCableSvc", "$interval", "authSvc", 
 
   $scope.register = function() {
     var user = new userRes($scope.registerUser);
-    user.$save();
+    user.$save({'nested[name]': 'blah', 'nested[age]': 33});
 
     // userRes.create({user: $scope.registerUser});
     $scope.registerUser = {};
