@@ -2,22 +2,21 @@ var app = require("angular").module("myApp");
 
 
 // configuring routes
-app.config(["$urlRouterProvider", "$locationProvider", "$stateProvider",
- function($urlRouterProvider, $locationProvider, $stateProvider) {
-  // $routeProvider
-  //  .when('/', {
-  //   templateUrl: 'assets/js/components/home/home.html',
-  //   controller: 'HomeCtrl',
-  // })
+app.config(["$urlRouterProvider", "$locationProvider", "$stateProvider", "constants",
+ function($urlRouterProvider, $locationProvider, $stateProvider, constants) {
 
-  var templatesBaseUrl = 'assets/js/components/';
+  var templatesBaseUrl = constants.templatesBaseUrl;
   $urlRouterProvider.otherwise('/');
   $stateProvider
-    .state('home', {
+    .state('welcome', {
       url: '/',
-      templateUrl: templatesBaseUrl + 'home/home.html',
-      controller: 'HomeCtrl'
+      template: '<welcome></welcome>'
     })
+    // .state('home', {
+    //   url: '/',
+    //   templateUrl: templatesBaseUrl + 'home/home.html',
+    //   controller: 'HomeCtrl'
+    // })
     .state('chatroom', {
       url: '/chatroom',
       templateUrl: templatesBaseUrl + 'chatroom/chatroom.html',
@@ -52,25 +51,7 @@ app.config(['$httpProvider', function($httpProvider) {
   $httpProvider.interceptors.push('camelHttpInterceptor');
 }]);
 
-
-// configuring onScrollClass
-app.config(["onScrollClassConfigProvider",
- function(onScrollClassConfigProvider) {
-   onScrollClassConfigProvider.config = {
-     offset: 420
-   }
-}]);
-
-app.run(["$rootScope", "$timeout", "notifSvc", function($rootScope, $timeout, notifSvc) {
-  $rootScope.pageLoaded = false;
-  $rootScope.loadTimeoutReached = false;
-
-  $rootScope.setPageLoaded = function(bool) {
-    $rootScope.pageLoaded = bool;
-  }
-
-  $timeout(function() {
-    $rootScope.loadTimeoutReached = true;
-  }, 2000);
+app.run(["$rootScope", "$stateParams", "notifSvc",  function($rootScope, $stateParams, notifSvc) {
   $rootScope.notifications = notifSvc.get('global');
+  $rootScope.stateParams = $stateParams;
 }]);

@@ -8,8 +8,7 @@
 
 @import "fontcustom";
 @import "animate";
-@import "styles/modules";
-@import "styles/forms";
+@import "modules/index";
 
 
 
@@ -18,6 +17,14 @@
 *, *:before, *:after {
   box-sizing: border-box;
 }
+
+
+
+*::-moz-focus-inner {
+  border: 0;
+}
+
+
 
 *:active, *:focus {
   outline: none;
@@ -41,19 +48,16 @@ strong {
 }
 
 html {
+  height: 100%;
   font-size: $base-font-size-px;
   line-height: $base-line-height;
 }
 
 
 body {
-  min-height: 100%;
+  height: 100%;
   font-size: $base-font-size;
   line-height: $base-line-height;
   font-family: $primary-font-family;
   color: palette(neutral, -2);
-  overflow: hidden;
-  background-color: #B9ABB3;
-
-
 }

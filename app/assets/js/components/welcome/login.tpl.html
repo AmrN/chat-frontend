@@ -1,0 +1,28 @@
+<div class="wrapper pad-v-1 pad-h-1 clearfix">
+  <form name="loginUserForm" ng-submit="loginUser()" novalidate>
+    <div class="form-inputs -inline">
+      <div class="field-group -inline">
+        <label for="login-username">Username</label>
+        <input id="login-username" type="text" ng-model="user.username">
+      </div>
+      <div class="field-group -inline">
+        <label for="login-password">Password</label>
+        <input id ="login-password" type="password" ng-model="user.password">
+      </div>
+      <div class="field-group -inline">
+        <label class="-small">
+          <input type="checkbox" ng-model="user.rememberMe">
+          <span>Remember Me</span>
+        </label>
+      </div>
+      <div class="field-group -inline">
+        <a href="#" class="login-section-link fz--1">Forgot password?</a>
+      </div>
+
+    </div>
+    <div class="form-actions -inline">
+      <input type="submit" value="Login" class="btn-ghost">
+      <!-- <button type="submit"  class="btn-ghots">Login</button> -->
+    </div>
+  </form>
+</div>

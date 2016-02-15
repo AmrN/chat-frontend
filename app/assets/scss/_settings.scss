@@ -17,9 +17,7 @@ $colors-map: (
         'primary'  : #755C6A,
         'accent'   : #D2A48E,
         'secondary': #55808E,
-
         'neutral'  : #808080
-
 );
 
 //@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,800,600,700);
@@ -29,22 +27,23 @@ $colors-map: (
 //   src:  url('stylesheets/fonts/unicode.optima-webfont.woff2') format('woff2'),
 //        url('stylesheets/fonts/unicode.optima-webfont.woff') format('woff');
 // }
-@font-face{
-	font-family:"bauhaus";
-    src:   url('/fonts/BAUHS93/BAUHS93.woff') format('woff');
-}
-//@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
+// @font-face{
+// 	font-family:"bauhaus";
+//     src:   url('/fonts/BAUHS93/BAUHS93.woff') format('woff');
+// }
+// @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
+@import url(https://fonts.googleapis.com/css?family=Quicksand:400,700,300);
 $fw-light     : 300;
 $fw-medium    : 400;
 $fw-bold      : 700;
-$fw-ultra-bold: 800;
+// $fw-ultra-bold: 800;
 
-//$primary-font-family: 'Raleway', sans-serif;
-$secondary-font-family:  "bauhaus",Segoe,Segoe UI,Candara,Calibri,Arial,sans-serif;
-$primary-font-family: 'Trebuchet MS', Helvetica, sans-serif;
+// $primary-font-family: 'impact', sans-serif;
+$secondary-font-family:'Trebuchet MS', Helvetica, sans-serif;
+$primary-font-family: 'Quicksand', Helvetica, sans-serif;
 
 // Vertical Rhythm Settings
-$base-font-size-px: 16px;
+$base-font-size-px: 18px;
 $base-font-size: 1rem;
 $base-line-height: $base-font-size * 1.5;
 

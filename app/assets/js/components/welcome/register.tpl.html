@@ -1,0 +1,22 @@
+<div class="wrapper pad-v-2 pad-h-3 clearfix">
+  <h2 class="form-header">New? Sign up</h2>
+  <form name="registerForm" ng-submit="registerUser()" novalidate>
+    <div class="form-inputs">
+      <div class="field-group">
+        <label for="register-username">Username</label>
+        <input id="register-username" type="text" ng-model="user.username">
+      </div>
+      <div class="field-group">
+        <label for="register-password">Password</label>
+        <input id ="register-password" type="password" ng-model="user.password">
+      </div>
+      <div class="field-group">
+        <label for="register-password-confirmation">Password Confirmation</label>
+        <input id ="register-password-confirmation" type="password" ng-model="user.passwordConfirmation">
+      </div>
+    </div>
+    <div class="form-actions">
+      <input type="submit" value="Sign up" class="btn-ghost">
+    </div>
+  </form>
+</div>

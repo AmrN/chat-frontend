@@ -1,0 +1,81 @@
+input {
+  font-family: $primary-font-family;
+}
+
+input[type=text], input[type=password] {
+  background-color: fade-out(white,.5);
+  padding: 4px;
+  border:none;
+  width: 100%;
+}
+
+input[type=checkbox] {
+  margin: rem(6px) rem(5px) rem(5px) 0;
+  float: left;
+
+  & + span {
+    float: left;
+  }
+}
+
+
+
+
+
+label {
+  display: block;
+  margin-bottom: rem(3px);
+  color: white;
+  @include fz(0);
+
+  &.-small {
+    @include fz(-1);
+    // font-size: 10px;
+  }
+}
+
+.field-group {
+  @extend .clearfix;
+  &.-inline {
+    // display: inline-block;
+    float:left;
+    margin-right: 3%;
+    margin-bottom: 0;
+    width: 46%;
+  }
+  margin-bottom: $base-line-height * 0.5;
+}
+
+.form-inputs {
+  &.-inline {
+    float: left;
+    width: 80%;
+  }
+}
+
+.form-actions {
+  &.-inline {
+    float:left;
+    width: 20%;
+    margin: 0;
+    input[type=submit] {
+      // width: 100%;
+      margin-top: rem(32px);
+      // margin-left: rem(5px);
+    }
+  }
+
+  text-align: center;
+  margin-top: $base-line-height * 1;
+}
+
+.form-header {
+  @include fz(1);
+  text-align: center;
+  margin-bottom: $base-line-height * 0.5;
+}
+
+.guest-login-form {
+  width: rem(164px);
+  margin: 0 auto;
+}
