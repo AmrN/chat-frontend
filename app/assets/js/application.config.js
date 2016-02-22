@@ -52,6 +52,6 @@ app.config(['$httpProvider', function($httpProvider) {
 }]);
 
 app.run(["$rootScope", "$stateParams", "notifSvc",  function($rootScope, $stateParams, notifSvc) {
-  $rootScope.notifications = notifSvc.get('global');
+  $rootScope.globalNotifications = notifSvc.get('global');
   $rootScope.stateParams = $stateParams;
 }]);

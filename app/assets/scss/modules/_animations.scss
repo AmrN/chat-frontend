@@ -1,0 +1,15 @@
+// global-notifications animations
+.global-notification.ng-enter,
+.global-notification.ng-leave {
+  transition: all linear 0.3s;
+}
+
+.global-notification.ng-leave.ng-leave-active,
+.global-notification.ng-enter {
+  opacity: 0;
+}
+
+.global-notification.ng-leave,
+.global-notification.ng-enter.ng-enter-active {
+  opacity: 1;
+}

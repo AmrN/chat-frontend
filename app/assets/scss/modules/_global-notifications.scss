@@ -1,0 +1,19 @@
+.global-notifications {
+  position: fixed;
+  left: rem(100px);
+  top: rem(50px);
+}
+
+.global-notification {
+  background-color: white;
+  color: palette(neutral);
+  padding: $base-line-height * 0.5;
+  border-radius: 4px;
+  box-shadow: 0px 0px 5px #787474;
+}
+
+.remove-notification {
+  color: #F2A2A2;
+  margin-left: $base-line-height * 0.5;
+  cursor: pointer;
+}

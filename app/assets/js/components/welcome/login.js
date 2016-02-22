@@ -11,21 +11,19 @@ module.exports = ['constants', 'authSvc', 'notifSvc', function(constants, authSv
       };
 
       $scope.$on('auth.login.success', function() {
-        console.log('in success');
         $scope.loggedInUser = authSvc.currentUser();
-        console.log($scope.loggedInUser);
+        // console.log($scope.loggedInUser);
         // actionCableSvc.createConsumer(constants.cableBaseUrl,
         //   {auth_token: authSvc.getToken()});
 
-        notifSvc.add('global', {message: 'logged in successfully :)', class: 'success'}, 6000);
+        notifSvc.add('global', {message: 'logged in successfully :)', class: 'success'}, 4000);
         // $state.go('chatroom');
       });
 
       $scope.$on('auth.login.error', function() {
-        console.log('login error');
+        // console.log('login error');
         notifSvc.add('global', {message: "login failed :(", class: 'error'}, 6000);
-      })
-
+      });
     }
   }
 }];

@@ -1,0 +1,3 @@
+<ul class="global-notifications">
+  <li ng-repeat="notif in globalNotifications" class="global-notification" ng-class="notif.class">{{notif.message}} <span class="remove-notification" ng-click="globalNotifications.splice($index, 1)">&cross;</span></li>
+</ul>
