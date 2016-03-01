@@ -1,0 +1,23 @@
+<logout></logout>
+
+<angucomplete-alt id="rooms"
+              placeholder="Search rooms"
+              pause="400"
+              selected-object="searchObjSelected"
+              clear-selected="true"
+              remote-url="/api/chatrooms?search="
+              remote-url-data-field="results"
+              title-field="name"
+              description-field="description"
+              input-class="form-control form-control-small"
+              remote-url-response-formatter="responseFormatter">
+</angucomplete-alt>
+
+<h2>Rooms</h2>
+<ul>
+  <li ng-repeat="room in rooms">
+    <a  ui-sref="home.chatrooms({chatroomId: room.id})">{{room.name}}</a>
+  </li>
+  <button ui-sref="home.newchatroom">New room</button>
+</ul>
+<ui-view></ui-view>

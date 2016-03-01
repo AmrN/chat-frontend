@@ -12,16 +12,23 @@ app.config(["$urlRouterProvider", "$locationProvider", "$stateProvider", "consta
       url: '/',
       template: '<welcome></welcome>'
     })
+    .state('home', {
+      url: '/home',
+      template: '<home></home>'
+    })
+    .state('home.chatrooms', {
+      url: '/chatrooms/:chatroomId',
+      template: '<chatroom></chatroom>'
+    })
+    .state('home.newchatroom', {
+      url: '/newchatroom',
+      template: '<new-chatroom></new-chatroom>'
+    })
     // .state('home', {
     //   url: '/',
     //   templateUrl: templatesBaseUrl + 'home/home.html',
     //   controller: 'HomeCtrl'
     // })
-    .state('chatroom', {
-      url: '/chatroom',
-      templateUrl: templatesBaseUrl + 'chatroom/chatroom.html',
-      controller: 'ChatroomCtrl'
-    })
     .state('about', {
       url: '/about',
       resolve: {
@@ -49,6 +56,7 @@ app.config(['authSvcProvider', 'constants', function(authSvcProvider, constants)
 app.config(['$httpProvider', function($httpProvider) {
   $httpProvider.interceptors.push('authHttpInterceptor');
   $httpProvider.interceptors.push('camelHttpInterceptor');
+  // $httpProvider.interceptors.push('jsonApiHttpInterceptor');
 }]);
 
 app.run(["$rootScope", "$stateParams", "notifSvc",  function($rootScope, $stateParams, notifSvc) {

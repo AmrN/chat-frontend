@@ -1,0 +1,15 @@
+<h2>New chatroom</h2>
+<form name="chatroomForm" ng-submit="createChatroom()" novalidate>
+  <div class="form-inputs">
+    <div class="field-group">
+      <label for="chatroom-name">Name</label>
+      <input id="chatroom-name" type="text" ng-model="chatroom.name">
+    </div>
+    <div class="field-group">
+      <label for="chatroom-description">Description</label>
+      <textarea id="chatroom-description" ng-model="chatroom.description" rows="8" cols="40"></textarea>
+    </div>
+  </div>
+  <div class="form-actions">
+    <input type="submit" value="Create">
+  </div>

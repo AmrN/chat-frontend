@@ -1,4 +1,4 @@
-module.exports = ['constants', 'authSvc', 'notifSvc', function(constants, authSvc, notifSvc) {
+module.exports = ['constants', 'authSvc', 'notifSvc', '$state', function(constants, authSvc, notifSvc, $state) {
   return {
     scope: true,
     templateUrl: constants.templatesBaseUrl + 'welcome/login.tpl.html',
@@ -17,6 +17,7 @@ module.exports = ['constants', 'authSvc', 'notifSvc', function(constants, authSv
         //   {auth_token: authSvc.getToken()});
 
         notifSvc.add('global', {message: 'logged in successfully :)', class: 'success'}, 4000);
+        $state.go('home');
         // $state.go('chatroom');
       });
 

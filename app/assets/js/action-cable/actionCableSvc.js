@@ -10,7 +10,11 @@ module.exports = [ function() {
   }
 
   this.disconnect = function() {
+    // TODO: figure out a way to do this correctly
+    this.getApp().connection.close();
     this.getApp().connection.disconnect();
+    this.getApp().connectionMonitor.stop();
+    app = null;
   }
 
   this.getApp = function() {

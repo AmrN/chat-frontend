@@ -1,0 +1,15 @@
+<h2>Room: {{chatroom.name}}</h2>
+<h3>{{chatroom.description}}</h3>
+<ul class="messages">
+  <div class="">
+    <a href="#" ng-click="loadOlderMessages()">Load older messages</a>
+  </div>
+  <li class="message" ng-repeat="message in messages">
+    <p>
+      By: {{message.user.username}}
+    </p>
+    {{message.content}}
+  </li>
+  <input type="text" ng-model="currentMessage.content" ng-keyup="($event.keyCode == 13) ? sendMessage() : null">
+
+</ul>
