@@ -9,7 +9,7 @@ module.exports = ['constants', 'chatroomRes', 'notifSvc', '$state', '$rootScope'
         newChatroom.$save(function() {
           notifSvc.add('global', {message: 'chatroom created successfully'}, 4000);
           $rootScope.$broadcast('chatroom.created', newChatroom);
-          $state.go('home.chatrooms', {chatroomId: newChatroom.id});
+          $state.go('home.chat.chatrooms', {chatroomId: newChatroom.id});
         }, function() {
           notifSvc.add('global', {message: "Coudln't create chatroom"}, 4000);
         });

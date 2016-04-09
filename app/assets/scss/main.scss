@@ -1,1 +1,63 @@
-@import "_base";
+@import "settings";
+@import "normalize";
+@import "extends";
+@import "mixins";
+@import "vertical-rhythm";
+@import 'jeet/jeet';
+@import "mappy-breakpoints";
+
+@import "fontcustom";
+@import "animate";
+@import "modules/index";
+@import "../js/components/**/*.scss";
+
+
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+
+
+*::-moz-focus-inner {
+  border: 0;
+}
+
+
+
+*:active, *:focus {
+  outline: none;
+}
+
+a{
+  text-decoration: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+p {
+  @include bp(max-width small) {
+    @include fz(-1);
+  }
+}
+
+strong {
+  font-weight: bold;
+}
+
+html {
+  height: 100%;
+  font-size: $base-font-size-px;
+  line-height: $base-line-height;
+}
+
+
+body {
+  height: 100%;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  font-family: $primary-font-family;
+  color: palette(neutral, -2);
+}

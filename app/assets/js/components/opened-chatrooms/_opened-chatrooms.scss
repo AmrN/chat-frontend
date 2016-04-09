@@ -1,0 +1,54 @@
+.opened-chatrooms-tabs {
+  display: flex;
+  align-items: flex-start;
+  overflow: auto;
+}
+
+.opened-chatroom-tab {
+  flex: 0 0 180px;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  align-items: center;
+
+  margin-right: $base-line-height*.25;
+  padding: rem(6px) $base-line-height*.25;
+  background-color: #DBDBDB;
+
+  cursor: pointer;
+  font-weight: bold;
+  transition: padding .3s linear;
+
+
+  &.active {
+    background-color: #EDEDED;
+    // padding-bottom: rem(12px);
+    padding: 9px 6px;
+  }
+
+  .room-name {
+    margin-right: $base-line-height*.25;
+    flex-basis: 80%;
+    color: #00B0C8;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .close-room {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #EDEDED;
+    width: 15px;
+    height: 15px;
+    font-size: 12px;
+    background-color: darken(#00B0C8, 4%);
+    border-radius: 50%;
+
+    &:hover {
+      background-color: #00B0C8;
+    }
+  }
+}

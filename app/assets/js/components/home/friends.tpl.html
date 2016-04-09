@@ -1,0 +1,5 @@
+<ul>
+  <li ng-repeat="friend in friends">
+    <a  ui-sref="home.chat.chatrooms({chatroomId: friend.acquaintanceship.chatroomId})">{{friend.username}}</a>
+  </li>
+</ul>

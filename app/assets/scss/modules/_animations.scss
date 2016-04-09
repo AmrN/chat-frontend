@@ -13,3 +13,31 @@
 .global-notification.ng-enter.ng-enter-active {
   opacity: 1;
 }
+
+
+// opened-chatroom-tab
+.opened-chatroom-tab.ng-enter,
+.opened-chatroom-tab.ng-leave {
+  transition: all .3s linear;
+}
+
+.opened-chatroom-tab.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+.opened-chatroom-tab.ng-enter {
+  transform: translateX(-15px);
+}
+
+// .opened-chatroom-tab.ng-leave.ng-leave-active {
+//   transform: scaleX(0.01);
+// }
+
+
+
+.opened-chatroom-tab.ng-leave,
+.opened-chatroom-tab.ng-enter.ng-enter-active {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+
+}

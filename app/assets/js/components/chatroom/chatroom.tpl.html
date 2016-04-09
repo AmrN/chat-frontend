@@ -1,15 +1,41 @@
-<h2>Room: {{chatroom.name}}</h2>
-<h3>{{chatroom.description}}</h3>
-<ul class="messages">
-  <div class="">
-    <a href="#" ng-click="loadOlderMessages()">Load older messages</a>
-  </div>
-  <li class="message" ng-repeat="message in messages">
-    <p>
-      By: {{message.user.username}}
-    </p>
-    {{message.content}}
-  </li>
-  <input type="text" ng-model="currentMessage.content" ng-keyup="($event.keyCode == 13) ? sendMessage() : null">
+<div class="chatroom-container">
+  <div class="CR_messages-container">
+    <!-- <h2>Room: {{chatroom.name}}</h2>
+    <h3>{{chatroom.description}}</h3> -->
+    <!-- <div ng-if="!chatroom.oneToOne">
+      <div ng-switch="chatroom.subscribed">
+        <button type="button" ng-switch-when="true" ng-click="unsubscribe()">Unsubscribe</button>
+        <button type="button" ng-switch-when="false" ng-click="subscribe()">Subscribe</button>
+      </div>
+    </div>
+    <div ng-if="chatroom.oneToOne && acquaintance">
+      <div ng-switch="acquaintance.acquaintanceship.friend">
+        <button type="button" ng-switch-when="false" ng-click="addFriend(acquaintance.id)">Add friend</button>
+        <button type="button" ng-switch-when="true" ng-click="removeFriend(acquaintance.id)">Remove friend</button>
+      </div>
+    </div> -->
+    <div class="CR_messages">
+      <ul>
+        <div class="">
+          <a href="#" ng-click="loadOlderMessages()">Load older messages</a>
+        </div>
+        <li class="CR_message" ng-repeat="message in messages" ng-init="$last && scrollMessagesContainer()">
+          <div class="CR_message-meta">
+            <div class="author-image">
+              <img src="/assets/images/male-avatar.svg" alt="">
+            </div>
+              <a href="#" ng-click="openUserChatroom(message.user.id)" class="author-name">{{message.user.username}}</a>
+          </div>
+          <div class="CR_message-content">{{message.content}}</div>
+        </li>
 
-</ul>
+      </ul>
+    </div>
+
+  </div>
+  <div class="CR_message-input-container">
+      <textarea type="text" class="message-input" placeholder="Enter message..." ng-model="currentMessage.content" ng-keyup="processKeyInput($event)"></textarea>
+
+  </div>
+
+</div>

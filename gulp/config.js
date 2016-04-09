@@ -107,7 +107,7 @@ module.exports = {
   },
 
   watch: {
-    sass:    srcAssets + '/scss/**/*.{sass,scss}',
+    sass:    [srcAssets + '/scss/**/*.{sass,scss}', srcAssets + '/js/components/**/*.{sass,scss}'],
     scripts: srcAssets + '/js/**/*.js',
     images:  srcAssets + '/images/**/*',
     // sprites: srcAssets + '/images/**/*.png',
@@ -135,7 +135,8 @@ module.exports = {
       src:  developmentAssets + '/css/*.css',
       dest: productionAssets + '/css/',
       options: {
-        keepSpecialComments: 0
+        keepSpecialComments: 0,
+        processImport: false
       }
     },
     js: {

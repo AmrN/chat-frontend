@@ -1,50 +1,42 @@
 {
   "checksum": {
-    "previous": "6a80eb4874d31717cc54e14c28b00567aa49397b41905598ca3df3e15e1891aa",
-    "current": "6a80eb4874d31717cc54e14c28b00567aa49397b41905598ca3df3e15e1891aa"
+    "previous": "d62fe2c01f876c328f9ad4eabec6e0934e74cc1b7d88666463439455a2f4598d",
+    "current": "d62fe2c01f876c328f9ad4eabec6e0934e74cc1b7d88666463439455a2f4598d"
   },
   "fonts": [
-    "app/assets/fonts/fontcustom_6a80eb4874d31717cc54e14c28b00567.ttf",
-    "app/assets/fonts/fontcustom_6a80eb4874d31717cc54e14c28b00567.svg",
-    "app/assets/fonts/fontcustom_6a80eb4874d31717cc54e14c28b00567.woff",
-    "app/assets/fonts/fontcustom_6a80eb4874d31717cc54e14c28b00567.eot"
+    "app/assets/fonts/fontcustom_d62fe2c01f876c328f9ad4eabec6e093.ttf",
+    "app/assets/fonts/fontcustom_d62fe2c01f876c328f9ad4eabec6e093.svg",
+    "app/assets/fonts/fontcustom_d62fe2c01f876c328f9ad4eabec6e093.woff",
+    "app/assets/fonts/fontcustom_d62fe2c01f876c328f9ad4eabec6e093.eot"
   ],
   "glyphs": {
-    "arrow": {
-      "codepoint": 61696,
-      "source": "app/assets/icon-vectors/arrow.svg"
-    },
-    "bars": {
-      "codepoint": 61697,
-      "source": "app/assets/icon-vectors/bars.svg"
-    },
-    "board": {
-      "codepoint": 61698,
-      "source": "app/assets/icon-vectors/board.svg"
-    },
-    "chart": {
-      "codepoint": 61699,
-      "source": "app/assets/icon-vectors/chart.svg"
-    },
-    "checklist": {
-      "codepoint": 61700,
-      "source": "app/assets/icon-vectors/checklist.svg"
-    },
-    "email": {
-      "codepoint": 61701,
-      "source": "app/assets/icon-vectors/email.svg"
-    },
-    "facebook": {
-      "codepoint": 61702,
-      "source": "app/assets/icon-vectors/facebook.svg"
-    },
-    "linkedin": {
+    "burgerbars": {
       "codepoint": 61703,
-      "source": "app/assets/icon-vectors/linkedin.svg"
+      "source": "app/assets/icon-vectors/burgerbars.svg"
     },
-    "note": {
-      "codepoint": 61704,
-      "source": "app/assets/icon-vectors/note.svg"
+    "chatbubble": {
+      "codepoint": 61705,
+      "source": "app/assets/icon-vectors/chatbubble.svg"
+    },
+    "logo": {
+      "codepoint": 61706,
+      "source": "app/assets/icon-vectors/logo.svg"
+    },
+    "magnifier": {
+      "codepoint": 61707,
+      "source": "app/assets/icon-vectors/magnifier.svg"
+    },
+    "me": {
+      "codepoint": 61708,
+      "source": "app/assets/icon-vectors/me.svg"
+    },
+    "person": {
+      "codepoint": 61709,
+      "source": "app/assets/icon-vectors/person.svg"
+    },
+    "questionmark": {
+      "codepoint": 61710,
+      "source": "app/assets/icon-vectors/questionmark.svg"
     }
   },
   "options": {

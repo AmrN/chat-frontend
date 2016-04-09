@@ -1,0 +1,9 @@
+<div class="opened-chatrooms-container">
+  <div class="opened-chatrooms-tabs">
+      <div ng-repeat="room in openedRooms" ng-click="openRoom(room.id)"  class="opened-chatroom-tab" ng-class="{active: stateParams.chatroomId == room.id}" title="{{room.name}}">
+        <span class="room-name">{{room.name}}</span>
+        <span class="close-room" ng-click="closeRoom(room.id)">X</span>
+      </div>
+
+  </div>
+</div>

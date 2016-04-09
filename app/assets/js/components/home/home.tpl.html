@@ -1,4 +1,30 @@
-<logout></logout>
+<div class="home-page-wrapper">
+  <header class="home-header">
+    <div class="header-logo">
+      <img src="/assets/images/logo.svg" alt="logo">
+    </div>
+    <ul class="header-controls">
+      <li class="header-control"><i class="icon-magnifier"></i></li>
+      <li class="header-control"><i class="icon-questionmark"></i></li>
+      <li class="header-control"><i class="icon-burgerbars"></i></li>
+      <li class="header-control">
+        <logout></logout>
+      </li>
+  </header>
+
+  <div class="home-content">
+    <aside class="home-sidebar-wrapper">
+      <home-sidebar></home-sidebar>
+    </aside>
+    <ui-view class="main-content-wrapper">
+
+  </ui-view>
+  </div>
+</div>
+
+
+
+<!-- <logout></logout>
 
 <angucomplete-alt id="rooms"
               placeholder="Search rooms"
@@ -13,11 +39,5 @@
               remote-url-response-formatter="responseFormatter">
 </angucomplete-alt>
 
-<h2>Rooms</h2>
-<ul>
-  <li ng-repeat="room in rooms">
-    <a  ui-sref="home.chatrooms({chatroomId: room.id})">{{room.name}}</a>
-  </li>
-  <button ui-sref="home.newchatroom">New room</button>
-</ul>
-<ui-view></ui-view>
+
+<ui-view></ui-view> -->

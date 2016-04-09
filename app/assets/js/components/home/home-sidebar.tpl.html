@@ -1,0 +1,26 @@
+<div class="home-sidebar-container">
+  <header class="HSB_header">
+    <ul class="HSB_header-controls">
+      <li class="HSB_header-control" ng-click="chosenPane = 'friends'" ng-class="{active: chosenPane == 'friends'}">
+        <i class="icon-person"></i>
+      </li>
+      <li class="HSB_header-control"  ng-click="chosenPane = 'subscriptions'" ng-class="{active: chosenPane == 'subscriptions'}">
+        <i class="icon-chatbubble"></i>
+      </li>
+    </ul>
+    <div class="HSB_header-title">
+      {{chosenPane}}
+    </div>
+  </header>
+
+  <div class="HSB_content">
+    <div ng-switch="chosenPane">
+      <div ng-switch-when="friends">
+        <friends></friends>
+      </div>
+      <div ng-switch-when="subscriptions">
+        <subscriptions></subscriptions>
+      </div>
+    </div>
+  </div>
+</div>

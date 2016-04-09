@@ -2,7 +2,6 @@ require('angular');
 require('angular-route');
 require('angular-ui-router');
 require('angular-animate');
-// require('restangular');
 require('angular-resource');
 require('angucomplete-alt');
 require('jquery');

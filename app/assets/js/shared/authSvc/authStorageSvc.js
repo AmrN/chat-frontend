@@ -19,14 +19,14 @@ module.exports = [function() {
 
     this.getUser = function() {
       var user = sessionStorage.getItem('current_user') || localStorage.getItem('current_user');
-      return user;
+      return JSON.parse(user);
     };
 
     this.setUser = function(user) {
-      sessionStorage.setItem('current_user', user);
-      if (this.remembered()) {
-        localStorage.setItem('current_user', user);
-      }
+      sessionStorage.setItem('current_user', JSON.stringify(user));
+      // if (this.remembered()) {
+      //   localStorage.setItem('current_user', user);
+      // }
     };
 
     this.removeUser = function() {

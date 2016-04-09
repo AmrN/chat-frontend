@@ -4,7 +4,7 @@ module.exports = ['constants', 'authSvc', '$state', function(constants, authSvc,
     templateUrl: constants.templatesBaseUrl + 'welcome/welcome.tpl.html',
     link: function($scope) {
       if (authSvc.loggedIn()) {
-        $state.go('home');
+        $state.go('home.chat');
       }
     }
   }

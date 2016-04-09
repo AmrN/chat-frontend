@@ -2,7 +2,7 @@ module.exports = function() {
   // authTokenUrl
   this.config = {};
 
-  this.$get = ['$http', '$rootScope', 'authStorageSvc', 'userRes', function($http, $rootScope, authStorageSvc, userRes) {
+  this.$get = ['$http', '$rootScope', 'authStorageSvc', 'userRes', '$q', function($http, $rootScope, authStorageSvc, userRes, $q) {
     var config = this.config;
 
     var Auth = function() {
@@ -74,23 +74,15 @@ module.exports = function() {
         var token = authStorageSvc.getToken();
         if (token) {
 
-          user = userRes.current(function() {
-            authStorageSvc.setUser(user);
+          user = userRes.current(function(currentUser) {
+            authStorageSvc.setUser(currentUser);
           });
-
-          // userPromise = userRes.currentUser();
-          // userPromise.then(
-          //   function(userResponse) {
-          //     authStorageSvc.setUser(userResponse);
-          //     console.log(userPromise)
-          //     return userPromise;
-          //   }
-          // );
-          // user = userPromise.$object;
         }
       }
-
-      return user;
+      if (user.$promise) {
+        user = user.$promise;
+      }
+      return $q.when(user);
     };
 
     return new Auth();

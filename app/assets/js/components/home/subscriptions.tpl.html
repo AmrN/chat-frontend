@@ -1,0 +1,5 @@
+<ul>
+  <li ng-repeat="room in currentUser.subscriptions">
+    <a  ui-sref="home.chat.chatrooms({chatroomId: room.id})">{{room.name}}</a>
+  </li>
+</ul>

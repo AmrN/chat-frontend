@@ -6,3 +6,4 @@ require('./global-notifications');
 require('./welcome');
 require('./home');
 require('./chatroom');
+require('./opened-chatrooms');

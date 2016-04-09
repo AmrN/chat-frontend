@@ -10,3 +10,4 @@ require("./authSvc");
 require("./camelHttpInterceptor");
 require("./jsonApiHttpInterceptor");
 require("./notifSvc");
+require("./chatroomSvc");

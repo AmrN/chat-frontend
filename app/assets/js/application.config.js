@@ -16,11 +16,15 @@ app.config(["$urlRouterProvider", "$locationProvider", "$stateProvider", "consta
       url: '/home',
       template: '<home></home>'
     })
-    .state('home.chatrooms', {
+    .state('home.chat', {
+      url: '/chat',
+      template: '<chat></chat>'
+    })
+    .state('home.chat.chatrooms', {
       url: '/chatrooms/:chatroomId',
       template: '<chatroom></chatroom>'
     })
-    .state('home.newchatroom', {
+    .state('home.chat.newchatroom', {
       url: '/newchatroom',
       template: '<new-chatroom></new-chatroom>'
     })
